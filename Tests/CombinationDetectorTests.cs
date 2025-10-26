@@ -19,7 +19,7 @@ namespace Zonk.Showcase.Tests
         {
             var roll = new DiceValues(new[] { 2, 2, 2, 3, 4, 6 });
             var combos = CombinationDetector.DetectAll(roll);
-            Assert.Single(combos.Where(c => c.Combination == DiceCombination.ThreeOfAKind));
+            Assert.Single(combos, c => c.Combination == DiceCombination.ThreeOfAKind);
         }
 
         [Fact]

@@ -11,9 +11,9 @@ namespace Zonk.Showcase.AI
     ///
     /// BankedScore is the last committed total (post-bank), used as a stable reference.
     /// </summary>
-    public sealed class FsmAdditiveStrategy : BaseAI
+    public sealed class FsmAdaptiveStrategy : BaseAI
     {
-        public override string Name => "FSM-Additive";
+        public override string Name => "FSM-Adaptive";
 
         // Default to Aggressive at start.
         private BaseAI _current = new AggressiveStrategy();

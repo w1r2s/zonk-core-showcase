@@ -52,7 +52,7 @@ namespace Zonk.Showcase.Tests
         public void Fsm_Switches_To_Conservative_After_Two_Zonks_And_Banks_On_HighGain()
         {
             // two zonks -> FSM should switch to Conservative
-            var ai = new FsmAdditiveStrategy();
+            var ai = new FsmAdaptiveStrategy();
             var state = new GameState(
                 playerScore: 1000,
                 opponentScore: 1200,

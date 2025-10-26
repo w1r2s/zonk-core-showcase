@@ -10,7 +10,7 @@ namespace Zonk.Showcase.Tests
         public void Fsm_Switches_To_Aggressive_When_Leading_Opponent()
         {
             // Arrange: leading -> prefer Aggressive
-            var ai = new FsmAdditiveStrategy();
+            var ai = new FsmAdaptiveStrategy();
             var state = new GameState(
                 playerScore: 2200,
                 opponentScore: 1500,
@@ -32,7 +32,7 @@ namespace Zonk.Showcase.Tests
         public void Fsm_Switches_To_Conservative_When_Trailing_Opponent()
         {
             // Arrange: trailing -> prefer Conservative
-            var ai = new FsmAdditiveStrategy();
+            var ai = new FsmAdaptiveStrategy();
             var state = new GameState(
                 playerScore: 1000,
                 opponentScore: 1800,
@@ -54,7 +54,7 @@ namespace Zonk.Showcase.Tests
         public void Fsm_Zonk_Override_Forces_Conservative_Even_If_Leading()
         {
             // Arrange: leading but two zonks -> safety override to Conservative
-            var ai = new FsmAdditiveStrategy();
+            var ai = new FsmAdaptiveStrategy();
             var state = new GameState(
                 playerScore: 2200,
                 opponentScore: 1500,
@@ -74,7 +74,7 @@ namespace Zonk.Showcase.Tests
         [Fact]
         public void Fsm_Keeps_Current_On_Tie()
         {
-            var ai = new FsmAdditiveStrategy();
+            var ai = new FsmAdaptiveStrategy();
             var state = new GameState(
                 playerScore: 0, opponentScore: 1500,
                 bankedScore: 1500, currentTurnScore: 0,
@@ -89,7 +89,7 @@ namespace Zonk.Showcase.Tests
         [Fact]
         public void Fsm_Switches_Trailing_Then_Back_To_Aggressive_When_Leading()
         {
-            var ai = new FsmAdditiveStrategy();
+            var ai = new FsmAdaptiveStrategy();
 
             // Trailing -> Conservative
             var s1 = new GameState(
