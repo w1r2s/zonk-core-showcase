@@ -40,7 +40,7 @@ The project implements four autonomous agents:
 ## 🎮 AI Match Demo
 
 Short, accelerated 30-second clip showing a complete match  
-between two autonomous agents (Conservative vs. Addaptive).
+between two autonomous agents (Conservative vs. Adaptive).
 
 ![Gameplay demo](docs/zonk-demo.gif)
 
