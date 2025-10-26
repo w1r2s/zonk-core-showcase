@@ -19,6 +19,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Zonk.Core\Zonk.Core.csproj" />
+		<!-- Case-sensitive path -->
 		<Compile Include="..\Tests\**\*.cs" />
 	</ItemGroup>
 </Project>
