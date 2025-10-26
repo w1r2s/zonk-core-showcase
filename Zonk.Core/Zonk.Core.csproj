@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>Zonk.Showcase</RootNamespace>
+	</PropertyGroup>
+
+	<!-- Include source files from the core folder -->
+	<ItemGroup>
+		<Compile Include="..\core\Scoring\**\*.cs" />
+		<Compile Include="..\core\TurnEngine\**\*.cs" />
+		<Compile Include="..\core\AI\**\*.cs" />
+	</ItemGroup>
+</Project>
