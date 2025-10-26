@@ -1,3 +1,4 @@
+![.NET CI](https://github.com/w1r2s/zonk-core-showcase/actions/workflows/dotnet.yml/badge.svg)
 # Zonk / Farkle — Core Logic
 
 This repository contains the **core gameplay logic** extracted from a private Unity/Android implementation of the classic dice game *Zonk (Farkle)*.
@@ -58,12 +59,4 @@ Implemented as `ScoringService.IsZonkStrict(...)`.
 ---
 
 ## License
-
-Copyright (c) 2025 [w1r2s]
-
-This code is provided for educational and demonstration purposes only.  
-Redistribution, modification, or use of this code (in whole or in part)  
-for commercial or production purposes is **not permitted** without prior written consent of the author.
-
-The repository contains only the algorithmic layer of the game and  
-cannot be used to produce a playable build without additional assets and Unity-specific code.
+See [LICENSE](./LICENSE) for usage terms.
