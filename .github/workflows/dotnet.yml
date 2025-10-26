@@ -1,0 +1,41 @@
+name: .NET CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: |
+          dotnet restore Zonk.Core/Zonk.Core.csproj
+          dotnet restore Zonk.Tests/Zonk.Tests.csproj
+
+      - name: Build projects
+        run: |
+          dotnet build Zonk.Core/Zonk.Core.csproj --configuration Release --no-restore
+          dotnet build Zonk.Tests/Zonk.Tests.csproj --configuration Release --no-restore
+
+      - name: Run tests
+        run: |
+          dotnet test Zonk.Tests/Zonk.Tests.csproj --configuration Release --no-build --logger "trx;LogFileName=test_results.trx" --results-directory ./TestResults
+
+      - name: Publish test results (HTML)
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: xUnit Tests
+          path: "TestResults/*.trx"
+          reporter: dotnet-trx
